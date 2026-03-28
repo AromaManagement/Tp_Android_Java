@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">SQLite</string>
-    <string name="crear_base">Crear Base</string>
+    <string name="app_name">Agenda</string>
+    <string name="crear_base">CREAR BASE</string>
+    <string name="hint_nombre">Nombre:</string>
+    <string name="hint_telefono">Telefono:</string>
+    <string name="hint_correo">Correo:</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="menu_nuevo">Nuevo Registro</string>
+    <string name="space">" "</string>
+    <string name="ingrese_un_telefono">Ingrese un telefono</string>
+    <string name="ingrese_un_correo">Ingrese un correo</string>
+    <string name="ingrese_un_nombre">Ingrese un nombre</string>
 </resources>

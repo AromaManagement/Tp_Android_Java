@@ -1,9 +1,14 @@
 package com.sinnombre.sqlite;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -11,12 +16,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.sinnombre.sqlite.adaptadores.ListaContactosAdapter;
+import com.sinnombre.sqlite.db.DbContactos;
 import com.sinnombre.sqlite.db.DbHelper;
+import com.sinnombre.sqlite.entidades.Contactos;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    Button btnCrear;
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+
+    RecyclerView listaContactos;
+
+    SearchView txtBuscar;
+    ArrayList<Contactos> listaArrayContactos;
+
+    ListaContactosAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,20 +45,50 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnCrear = findViewById(R.id.btnCrear);
+        txtBuscar = findViewById(R.id.txtBuscar);
 
-        btnCrear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DbHelper dbHelper = new DbHelper(MainActivity.this);
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                if(db != null){
-                    Toast.makeText(MainActivity.this,"BASE DE DATOS CREADA",Toast.LENGTH_LONG).show();
-                }else {
-                    Toast.makeText(MainActivity.this,"ERROR AL CREAR BASE DE DATOS",Toast.LENGTH_LONG).show();
+        listaContactos = findViewById(R.id.listaContactos);
+        listaContactos.setLayoutManager(new LinearLayoutManager(this));
 
-                }
-            }
-        });
+        DbContactos dbContactos = new DbContactos(MainActivity.this);
+
+        listaArrayContactos = new ArrayList<>();
+
+        adapter = new ListaContactosAdapter(dbContactos.mostrarContactos());
+        listaContactos.setAdapter(adapter);
+
+        txtBuscar.setOnQueryTextListener(this);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_principal, menu);
+        return  true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menuNuevo) {
+            newRegistry();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void newRegistry(){
+        Intent intent = new Intent(this,NewActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        adapter.filtrado(query);
+        return false;
     }
 }

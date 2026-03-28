@@ -12,6 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLite">
         <activity
+            android:name=".ViewActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"> <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
+        </activity>
+
+        <activity
+            android:name=".NewActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"> <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+        </activity>
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -19,6 +36,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".EditarActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"> <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
         </activity>
     </application>
 
