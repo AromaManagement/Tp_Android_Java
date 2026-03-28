@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CalculoSalario</string>
+    <string name="textoBoton">Calcular</string>
+    <string name="textoSalario">Salario $</string>
+    <string name="textoISSS">ISSS 3%</string>
+    <string name="textoAFP">AFP 7.25%</string>
+    <string name="textoRenta">RENTA</string>
+    <string name="textoLiquido">Liquido a recibir $</string>
+    <string name="textoBotonNuevo">Nuevo Calculo</string>
+    <string name="errorSalario">Falta este campo</string>
+    <string name="errorSalarioIncorrecto">Salario Incorrecto</string>
+</resources>

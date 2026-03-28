@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Comunicacion03</string>
+    <string name="titulo">Comunicacion entre Apps</string>
+    <string name="hintNombre">Ingrese el Nombre...\n</string>
+    <string name="hintApellido">Ingrese el Apellido...</string>
+    <string name="hintCelular">Ingrese el Celular...</string>
+    <string name="hintBotonEnviar">Enviar</string>
+    <string name="TextoBotonVolver">Volver</string>
+</resources>
