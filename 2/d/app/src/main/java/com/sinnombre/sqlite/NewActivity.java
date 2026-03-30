@@ -1,5 +1,6 @@
 package com.sinnombre.sqlite;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,7 @@ public class NewActivity extends AppCompatActivity {
                 if(id > 0){
                     Toast.makeText(NewActivity.this,"REGISTRO GUARDADO",Toast.LENGTH_LONG).show();
                     limpiar();
+                    callMain();
                 }else {
                     Toast.makeText(NewActivity.this,"ERROR AL GUARDAR REGISTRO",Toast.LENGTH_LONG).show();
 
@@ -57,5 +59,11 @@ public class NewActivity extends AppCompatActivity {
         nombre.setText("");
         telefono.setText("");
         correo.setText("");
+    }
+
+    private void callMain(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

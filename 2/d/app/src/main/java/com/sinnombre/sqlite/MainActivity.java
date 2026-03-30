@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sinnombre.sqlite.adaptadores.ListaContactosAdapter;
 import com.sinnombre.sqlite.db.DbContactos;
 import com.sinnombre.sqlite.db.DbHelper;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     RecyclerView listaContactos;
 
     SearchView txtBuscar;
+    FloatingActionButton fabNuevo;
     ArrayList<Contactos> listaArrayContactos;
 
     ListaContactosAdapter adapter;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         });
 
         txtBuscar = findViewById(R.id.txtBuscar);
-
+        fabNuevo = findViewById(R.id.favNuevo);
         listaContactos = findViewById(R.id.listaContactos);
         listaContactos.setLayoutManager(new LinearLayoutManager(this));
 
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         adapter = new ListaContactosAdapter(dbContactos.mostrarContactos());
         listaContactos.setAdapter(adapter);
+
+        fabNuevo.setOnClickListener(view -> nuevoRegistro());
 
         txtBuscar.setOnQueryTextListener(this);
     }
@@ -91,4 +95,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         adapter.filtrado(query);
         return false;
     }
+    private void nuevoRegistro(){
+        Intent intent = new Intent(this, NewActivity.class);
+        startActivity(intent);
+    }
+
 }

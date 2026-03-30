@@ -104,5 +104,6 @@ public class ViewActivity extends AppCompatActivity {
     private void lista(){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

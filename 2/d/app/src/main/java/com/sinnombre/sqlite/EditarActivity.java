@@ -67,7 +67,6 @@ public class EditarActivity extends AppCompatActivity {
             txtNombre.setText(contacto.getNombre());
             txtTelefono.setText(contacto.getTelfono());
             txtCorreo.setText(contacto.getCorreo());
-            btnGuardar.setVisibility(View.INVISIBLE);
         }
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
@@ -95,5 +94,6 @@ public class EditarActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ViewActivity.class);
         intent.putExtra("id",id);
         startActivity(intent);
+        finish();
     }
 }
