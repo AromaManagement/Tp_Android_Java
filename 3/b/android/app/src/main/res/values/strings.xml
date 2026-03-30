@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CRUD Retrofit App</string>
+    <string name="product">Product:</string>
+    <string name="view">View</string>
+    <string name="id">ID:</string>
+    <string name="name">Name:</string>
+    <string name="price">Price:</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="crear">Crear</string>
+</resources>
