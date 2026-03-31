@@ -1,0 +1,27 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Build
+build/
+out/
+.gradle/
+*.class
+*.jar
+*.war
+
+# Android
+local.properties
+.externalNativeBuild
+.cxx
+captures/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local properties
+gradle.properties
