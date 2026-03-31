@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">windowsNavigation</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="msg_ins">Presiona regresar para volver al inicio, o siguiente para ir a la otra actividad</string>
+    <string name="regresar">Regresar</string>
+    <string name="llegaste">Llegaste</string>
+    <string name="msg_end">Esta es la ultima pantalla, presiona salir para cerrar la actividad</string>
+    <string name="instrucciones">Instrucciones</string>
+    <string name="salir">Salir</string>
+</resources>
