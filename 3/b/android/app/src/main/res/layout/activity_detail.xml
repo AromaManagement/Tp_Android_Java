@@ -86,7 +86,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:text="@string/delete"
             android:textColor="@color/black"
-            android:drawableStart="@drawable/baseline_delete_24"/>
+            android:drawableLeft="@drawable/baseline_delete_24"/>
     </LinearLayout>
 
 </LinearLayout>
