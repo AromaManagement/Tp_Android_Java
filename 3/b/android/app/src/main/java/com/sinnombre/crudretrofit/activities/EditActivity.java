@@ -26,6 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -101,6 +102,7 @@ public class EditActivity extends AppCompatActivity {
     private void edit(ProductDTO dto){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         crudInterface = retrofit.create(CRUDInterface.class);
