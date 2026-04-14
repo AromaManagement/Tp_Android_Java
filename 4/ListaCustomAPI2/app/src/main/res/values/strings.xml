@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListaCustomAPI</string>
+    <string name="textoBtnVolver">Volver</string>
+    <string name="textBtnVer">Ver Mas</string>
+</resources>
