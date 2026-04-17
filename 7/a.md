@@ -17,7 +17,7 @@ Header.Payload.Signature
 
 ## Funcionamiento
 
-![Diagrama de funcionamiento](./image/diagrama.png)
+![Diagrama de funcionamiento](./image/diagrama.jpg)
 
 Como indica la imagen, el usuario inicia sesión desde una aplicación Android o Web. Las credenciales son enviadas a la API, donde el servidor las valida. Si son correctas, genera un token JWT firmado digitalmente y lo devuelve al cliente. A partir de ese momento, el cliente enviará el token en cada solicitud protegida mediante el encabezado:
 
